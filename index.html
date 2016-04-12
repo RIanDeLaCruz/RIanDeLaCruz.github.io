@@ -1,9 +1,34 @@
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Ian De La Cruz</title>
-</head>
-<body>
-	<h1>Hello World</h1>
-</body>
-</html>
+<!DOCTYPE html> 
+<html> 
+   <head> 
+     <meta charset="utf-8"> 
+     <title>Unnamed Design Studio</title> 
+     <!--    <link rel="stylesheet" href="/css/normalize.css"> 
+     <link rel="stylesheet" href="css/main.css">--> 
+   </head> 
+   <body> 
+     <form name="mail"> 
+       <input type="button" value="Click!" onClick="sendMail()"> 
+     </form> 
+     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script> 
+     <script> 
+       function sendMail(){ 
+         $.ajax({ 
+           type: "POST", 
+           url: "https://api.mailjet.com/v3/send", 
+           contentType:"application/json", 
+           password:"b59bf223f0fab87c5d722de91507723b:55325cedd56cec8014c2c2b04de3d36b", 
+           data: { 
+             "FromEmail":"ian@iandelacruz.me", 
+             "FromName":"Ian", 
+             "Recipients":[{ 
+               "Email":"ribdlc0810@gmail.com" 
+               }], 
+           "Subject":"Test Email", 
+           "Text-part":"HELLO" 
+           }, 
+         }); 
+       } 
+     </script>
+   </body>
+ </html>
